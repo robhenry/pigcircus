@@ -1,6 +1,9 @@
 import unittest
 from querystrings import test_querystring_helper
+from urls import test_url_helper
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(test_querystring_helper.querystring_helper_tests)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    querystring_suite = unittest.TestLoader().loadTestsFromTestCase(test_querystring_helper.querystring_helper_tests)
+    url_suite = unittest.TestLoader().loadTestsFromTestCase(test_url_helper.url_helper_tests)
+    unittest.TextTestRunner(verbosity=2).run(querystring_suite)
+    unittest.TextTestRunner(verbosity=2).run(url_suite)
